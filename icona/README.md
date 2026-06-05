@@ -1,8 +1,7 @@
 # icona
 
-A React icon library — companion to **colora** and **fonta**.
-
-7,476 icons across 6 visual styles, sourced from the [Solar icon set by 480 Design](https://www.figma.com/community/file/1166831539721848736)
+7,476 icons across 6 visual styles, sourced from [Solar Icons](https://solar-icons.vercel.app)
+by [480 Design](https://www.figma.com/community/file/1166831539721848736)
 and exposed as tree-shakeable React components. The API is inspired by
 [Lucide](https://lucide.dev) (per-icon ESM exports, `forwardRef`, `currentColor`)
 and [Phosphor Icons](https://phosphoricons.com) (multiple weights/styles).
@@ -10,7 +9,7 @@ and [Phosphor Icons](https://phosphoricons.com) (multiple weights/styles).
 ## Install
 
 ```bash
-npm install icona
+npm install @emiluzelac/icona
 ```
 
 Peer deps: `react ^17 || ^18 || ^19`.
@@ -18,7 +17,7 @@ Peer deps: `react ^17 || ^18 || ^19`.
 ## Usage
 
 ```tsx
-import { HeartLinear, HeartBoldDuotone, BellOutline } from "icona";
+import { HeartLinear, HeartBoldDuotone, BellOutline } from "@emiluzelac/icona";
 
 export function Toolbar() {
   return (
@@ -56,7 +55,7 @@ Each base icon ships in 6 styles. The component name is `<BaseName><Style>`:
 Discoverable at runtime:
 
 ```ts
-import { iconNames, iconStyles } from "icona";
+import { iconNames, iconStyles } from "@emiluzelac/icona";
 
 iconStyles; // ["Bold", "BoldDuotone", "Broken", "LineDuotone", "Linear", "Outline"]
 iconNames.length; // 7476
@@ -103,8 +102,11 @@ npm run build      # tsup → dist/index.{js,cjs,d.ts}
 npm test           # smoke tests against dist
 ```
 
-## License
+## License & credits
 
-UNLICENSED — internal use across colora / fonta / icona ecosystem.
-Solar icons by [480 Design](https://www.figma.com/@480design) under their
-respective license; check the source set before redistributing.
+Icon artwork: [Solar Icons](https://solar-icons.vercel.app) by
+[480 Design](https://www.figma.com/@480design), licensed under
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). This package
+(generated components and tooling) is distributed under the same terms —
+see [LICENSE](./LICENSE). If you use icona, the Solar attribution carries
+through; no extra action is needed beyond keeping this notice.

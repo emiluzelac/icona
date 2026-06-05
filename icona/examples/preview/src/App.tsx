@@ -19,9 +19,9 @@ import {
   useState,
   type ReactNode
 } from "react";
-import * as Icona from "icona";
-import { CrownMinimalisticBoldDuotone, iconNames, iconStyles } from "icona";
-import type { IconaIconProps, IconaStyle } from "icona";
+import * as Icona from "@emiluzelac/icona";
+import { CrownMinimalisticBoldDuotone, iconNames, iconStyles } from "@emiluzelac/icona";
+import type { IconaIconProps, IconaStyle } from "@emiluzelac/icona";
 
 type IconComponent = (props: IconaIconProps) => JSX.Element;
 const iconMap = Icona as unknown as Record<string, IconComponent>;
@@ -187,7 +187,7 @@ function IconDialog({ name, onClose }: { name: string | null; onClose: () => voi
 
   const handleCopyImport = async () => {
     if (!name) return;
-    await navigator.clipboard.writeText(`import { ${name} } from "icona";`);
+    await navigator.clipboard.writeText(`import { ${name} } from "@emiluzelac/icona";`);
     setCopied("import");
   };
 
@@ -236,7 +236,7 @@ function IconDialog({ name, onClose }: { name: string | null; onClose: () => voi
               </div>
 
               <pre className="mt-4 overflow-x-auto rounded-lg bg-gray-100 p-3 text-xs/5 text-gray-800">
-                <code>{`import { ${name} } from "icona";`}</code>
+                <code>{`import { ${name} } from "@emiluzelac/icona";`}</code>
               </pre>
 
               <div className="mt-4 flex flex-wrap gap-2">
