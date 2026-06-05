@@ -1,0 +1,22 @@
+# Build artifacts
+node_modules/
+dist/
+.vercel/
+.DS_Store
+*.tsbuildinfo
+
+# Generated from svg/ by icona/scripts/generate-icons.mjs — run `npm run build:lib`
+icona/src/icons/
+icona/src/index.ts
+icona/icon-report.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+
+# Lockfiles for the demo (re-resolved on Vercel)
+icona/examples/preview/package-lock.json

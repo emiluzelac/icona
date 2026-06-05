@@ -1,0 +1,43 @@
+{
+  "name": "icona",
+  "version": "0.1.0",
+  "description": "Unified React icon library — deduplicated, line-style, Lucide-inspired API. Companion to colora and fonta.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "generate": "node scripts/generate-icons.mjs",
+    "build": "npm run generate && tsup",
+    "test": "node --test scripts/smoke-test.mjs",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@types/react": "^18.3.18",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "svgson": "^5.3.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5.7.3"
+  }
+}

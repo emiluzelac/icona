@@ -1,0 +1,9 @@
+{
+  "name": "icona-monorepo",
+  "private": true,
+  "scripts": {
+    "build:lib": "npm --prefix icona install && npm --prefix icona run build",
+    "build:demo": "npm --prefix icona/examples/preview install && npm --prefix icona/examples/preview run build",
+    "build": "npm run build:lib && npm run build:demo"
+  }
+}
