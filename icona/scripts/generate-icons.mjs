@@ -217,7 +217,7 @@ async function main() {
       `import { IconBase } from "../IconBase";`,
       `import type { IconaIconProps } from "../IconBase";`,
       ``,
-      `export const ${componentName} = forwardRef<SVGSVGElement, IconaIconProps>(function ${componentName}(props, ref) {`,
+      `export const ${componentName} = /* @__PURE__ */ forwardRef<SVGSVGElement, IconaIconProps>(function ${componentName}(props, ref) {`,
       `  return (`,
       `    <IconBase ref={ref} iconName="${componentName}" viewBox="${viewBox}" {...props}>`,
       jsxBody,

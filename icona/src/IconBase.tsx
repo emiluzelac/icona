@@ -26,7 +26,7 @@ interface InternalIconProps extends IconaIconProps {
   children: ReactNode;
 }
 
-export const IconBase = forwardRef<SVGSVGElement, InternalIconProps>(function IconBase(
+export const IconBase = /* @__PURE__ */ forwardRef<SVGSVGElement, InternalIconProps>(function IconBase(
   { iconName, viewBox, children, size = 24, title, color = "currentColor", strokeWidth, ...rest },
   ref
 ): ReactElement {
