@@ -3,6 +3,15 @@
   "version": "0.1.0",
   "description": "React icon library — 7,476 icons in 6 styles from the Solar icon set, tree-shakeable with a Lucide-inspired API.",
   "license": "CC-BY-4.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emiluzelac/icona.git",
+    "directory": "icona"
+  },
+  "homepage": "https://github.com/emiluzelac/icona#readme",
+  "bugs": {
+    "url": "https://github.com/emiluzelac/icona/issues"
+  },
   "publishConfig": {
     "access": "public"
   },
