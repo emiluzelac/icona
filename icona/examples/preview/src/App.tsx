@@ -82,14 +82,14 @@ export function App() {
     <div className="min-h-screen">
       <div className="sticky top-0 z-20 border-b border-white/10 bg-gray-900/90 backdrop-blur">
         <header className="px-4 pt-4 pb-2 sm:px-6 sm:pt-5 sm:pb-3">
-          <div className="mx-auto flex max-w-6xl items-center justify-center gap-3">
+          <div className="flex items-center justify-center gap-3">
             <CrownMinimalisticBoldDuotone size={32} className="text-amber-400" />
             <h1 className="text-xl font-semibold tracking-tight text-white">Icona</h1>
           </div>
         </header>
 
         <div className="px-4 pb-3 sm:px-6 sm:pb-4">
-          <div className="mx-auto flex max-w-6xl flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
             <Field className="min-w-0 sm:flex-1">
               <Label className="sr-only">Search icons</Label>
               <Input
@@ -123,15 +123,15 @@ export function App() {
       </div>
 
       <main className="px-4 py-5 sm:px-6 sm:py-6">
-        <div className="mx-auto max-w-6xl">
+        <div className="w-full">
           {filtered.length === 0 ? (
             <div className="py-24 text-center text-sm text-white/50">
               No icons match “{query}”.
             </div>
           ) : (
             <div
-              className="grid gap-1"
-              style={{ gridTemplateColumns: "repeat(auto-fill, minmax(56px, 1fr))" }}
+              className="grid gap-2"
+              style={{ gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))" }}
             >
               {filtered.map((item) => {
                 const Icon = iconMap[item.name];
@@ -144,7 +144,7 @@ export function App() {
                     title={item.base}
                     className="flex aspect-square cursor-pointer items-center justify-center rounded-lg text-white/80 transition hover:bg-white/5 hover:text-white"
                   >
-                    <Icon size={28} />
+                    <Icon size={48} />
                   </button>
                 );
               })}
