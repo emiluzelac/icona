@@ -3,7 +3,7 @@
   "framework": null,
   "buildCommand": "npm run build",
   "outputDirectory": "icona/examples/preview/dist",
-  "installCommand": "npm install --no-package-lock",
+  "installCommand": "",
   "trailingSlash": false,
   "cleanUrls": true
 }

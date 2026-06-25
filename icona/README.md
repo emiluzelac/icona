@@ -36,7 +36,7 @@ Every icon accepts the standard `SVGProps<SVGSVGElement>` plus:
 | ------------- | --------------------- | -------------- | ------------------------------------------------------------------ |
 | `size`        | `number \| string`    | `24`           | Sets `width` and `height`.                                         |
 | `color`       | `string`              | `currentColor` | All paths reference `currentColor`, so this works via CSS too.     |
-| `strokeWidth` | `number \| string`    | `1.5`          | Forwarded to the root SVG; affects stroked styles.                 |
+| `strokeWidth` | `number \| string`    | —              | Forwarded to the root `<svg>`. Solar's Linear/Broken art bakes `stroke-width="1.5"` into each path (which takes precedence), so it has no visible effect on those styles yet. |
 | `title`       | `string`              | —              | When set, adds `<title>` and `role="img"` for accessibility.       |
 
 ## Styles
