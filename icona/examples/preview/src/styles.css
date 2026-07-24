@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Use data-theme="dark" on <html> for class-based dark mode */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 @theme {
   --font-sans:
     ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -9,6 +12,21 @@
     "Courier New", monospace;
 }
 
+/* Design tokens ------------------------------------------------------------ */
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --page-bg: #f8fafc;
+  --page-text: #0f172a;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --page-bg: #0f172a;
+  --page-text: #f1f5f9;
+}
+
+/* Base --------------------------------------------------------------------- */
 html,
 body,
 #root {
@@ -16,7 +34,12 @@ body,
 }
 
 body {
-  @apply bg-gray-900 text-white antialiased;
+  @apply antialiased;
+  background-color: var(--page-bg);
+  color: var(--page-text);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 @utility no-scrollbar {
