@@ -1,6 +1,6 @@
 # icona
 
-7,476 icons across 6 visual styles, sourced from [Solar Icons](https://solar-icons.vercel.app)
+7,494 icons across 6 visual styles, sourced from [Solar Icons](https://solar-icons.vercel.app)
 by [480 Design](https://www.figma.com/community/file/1166831539721848736)
 and exposed as tree-shakeable React components. The API is inspired by
 [Lucide](https://lucide.dev) (per-icon ESM exports, `forwardRef`, `currentColor`)
@@ -58,7 +58,7 @@ Discoverable at runtime:
 import { iconNames, iconStyles } from "@emiluzelac/icona";
 
 iconStyles; // ["Bold", "BoldDuotone", "Broken", "LineDuotone", "Linear", "Outline"]
-iconNames.length; // 7476
+iconNames.length; // 7494
 ```
 
 > **Tip — naming icons starting with a digit:** SVGs whose filename begins with
@@ -81,7 +81,7 @@ duotone variants automatically adapt to your theme.
 Icona ships a single barrel (`dist/index.js`) with `sideEffects: false` and
 fully isolated icon definitions. Modern bundlers (Vite, webpack 5, esbuild,
 Rollup, Next.js, Remix) include only what you import — even though the package
-exposes 7,476 components, your bundle only gets the ones you use.
+exposes 7,494 components, your bundle only gets the ones you use.
 
 ## Demo
 
@@ -110,3 +110,7 @@ Icon artwork: [Solar Icons](https://solar-icons.vercel.app) by
 (generated components and tooling) is distributed under the same terms —
 see [LICENSE](./LICENSE). If you use icona, the Solar attribution carries
 through; no extra action is needed beyond keeping this notice.
+
+A few icons have no Solar equivalent and are composed from Solar's own
+geometry (e.g. `chevron-up-down` reuses the `alt-arrow` shapes); they inherit
+the same license and style conventions.

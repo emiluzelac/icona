@@ -9,18 +9,18 @@ const packageRoot = path.resolve(__dirname, "..");
 test("dist exports the full Solar icon set", async () => {
   const mod = await import(path.join(packageRoot, "dist", "index.js"));
   assert.ok(Array.isArray(mod.iconNames), "iconNames should be exported");
-  assert.equal(mod.iconNames.length, 7476, `expected 7476 icons, got ${mod.iconNames.length}`);
+  assert.equal(mod.iconNames.length, 7494, `expected 7494 icons, got ${mod.iconNames.length}`);
   assert.deepEqual(
     [...mod.iconStyles].sort(),
     ["Bold", "BoldDuotone", "Broken", "LineDuotone", "Linear", "Outline"]
   );
 });
 
-test("each style has 1246 icons", async () => {
+test("each style has 1249 icons", async () => {
   const mod = await import(path.join(packageRoot, "dist", "index.js"));
   for (const style of mod.iconStyles) {
     const exact = mod.iconNames.filter((n) => n.slice(-style.length) === style).length;
-    assert.ok(exact >= 1240, `expected ~1246 ${style} icons, got ${exact}`);
+    assert.ok(exact >= 1249, `expected 1249 ${style} icons, got ${exact}`);
   }
 });
 
@@ -29,7 +29,7 @@ test("renderToStaticMarkup produces an svg with currentColor and no hardcoded br
   const { renderToStaticMarkup } = await import("react-dom/server");
   const { createElement } = await import("react");
 
-  for (const sampleName of ["AddCircleLinear", "HeartBold", "BellBoldDuotone"]) {
+  for (const sampleName of ["AddCircleLinear", "HeartBold", "BellBoldDuotone", "AddLinear", "CloseLinear", "ChevronUpDownLinear"]) {
     const Icon = mod[sampleName];
     if (!Icon) continue;
     const html = renderToStaticMarkup(createElement(Icon, { size: 32, title: "t" }));
