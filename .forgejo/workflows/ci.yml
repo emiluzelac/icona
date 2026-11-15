@@ -5,7 +5,7 @@ name: CI
 # github.com/emiluzelac/icona (Vercel builds the preview site from that copy).
 # Runs in a disposable VM on the estate's CI host. It builds the library and
 # runs the same smoke test as `npm publish` (prepublishOnly), then builds the
-# preview. Publishing to npm stays by hand from the iMac (2FA).
+# preview. Publishing to npm is publish.yml, on a v* tag.
 
 on:
   push:
