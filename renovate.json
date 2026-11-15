@@ -1,0 +1,4 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Icona's dependency updates: Renovate on our Forgejo since 2026-11-15, when Icona's canonical repository moved there (GitHub is its mirror; Vercel builds the preview from it). Estate defaults come from the preset emiluzelac/renovate-config. Everything waits for review: the package is published by hand from the iMac, and its build tools shape what every consumer installs."
+}

@@ -1,0 +1,40 @@
+name: CI
+
+# Icona's first CI (2026-11-15), added when its canonical repository moved to
+# our own (private) Forgejo, which mirrors every push to
+# github.com/emiluzelac/icona (Vercel builds the preview site from that copy).
+# Runs in a disposable VM on the estate's CI host. It builds the library and
+# runs the same smoke test as `npm publish` (prepublishOnly), then builds the
+# preview. Publishing to npm stays by hand from the iMac (2FA).
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+jobs:
+  build:
+    name: Build, smoke-test, preview
+    runs-on: [self-hosted, linux, x64, iam-ci-isolated]
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version-file: .nvmrc
+      - name: Build the library
+        run: npm --prefix icona ci && npm --prefix icona run build
+      - name: Smoke test (what prepublishOnly runs)
+        run: npm --prefix icona test
+      - name: Build the preview site
+        run: npm run build:demo
